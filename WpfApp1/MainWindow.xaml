@@ -6,15 +6,24 @@
         xmlns:local="clr-namespace:WpfApp1"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <Grid Margin="0,0,-22,-16">
-        <Button Content="Button" HorizontalAlignment="Left" Margin="719,26,0,0" VerticalAlignment="Top" Click="OnClick" ClickMode="Press"/>
-        <DataGrid Margin="0,86,0,68" AutoGenerateColumns="False" IsReadOnly="True" HorizontalAlignment="Center" Width="515">
+    <Grid Margin="15">
+
+        <Grid.RowDefinitions>
+
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+
+        </Grid.RowDefinitions>
+        
+        <Button Width="140" Content="Seleccionar Archivo" HorizontalAlignment="Center" Margin="0,20,0,20" VerticalAlignment="Top" Click="OnClick" ClickMode="Press" BorderThickness="2"/>
+        <DataGrid AutoGenerateColumns="False" IsReadOnly="True" HorizontalAlignment="Center" Width="700" x:Name="Dg" Grid.Row="1">
             <DataGrid.Columns>
-                <DataGridTextColumn Header="ID Departamento" Binding="{Binding IDD}" Visibility="Visible"/>
-                <DataGridTextColumn Header="ID Departamento" Binding="{Binding IDD}" Visibility="Visible"/>
-                <DataGridTextColumn Header="ID Departamento" Binding="{Binding IDD}" Visibility="Visible"/>
-                <DataGridTextColumn Header="ID Departamento" Binding="{Binding IDD}" Visibility="Visible"/>
-                <DataGridTextColumn Header="ID Departamento" Binding="{Binding IDD}" Visibility="Visible"/>
+                <DataGridTextColumn Header="Cd Departamento" Width="*" Binding="{Binding CdDepartamento}" Visibility="Visible"/>
+                <DataGridTextColumn Header="Cd Municipio" Width="*" Binding="{Binding CdMunicipio}" Visibility="Visible"/>
+                <DataGridTextColumn Header="Nombre Departamento" Width="200" Binding="{Binding Departamento}" Visibility="Visible"/>
+                <DataGridTextColumn Header="Nombre Municipio" Width="200" Binding="{Binding Municipio}" Visibility="Visible"/>
+                <DataGridTextColumn Header="Tipo" Width="80" Binding="{Binding Tipo}" Visibility="Visible"/>
             </DataGrid.Columns>
         </DataGrid>
 

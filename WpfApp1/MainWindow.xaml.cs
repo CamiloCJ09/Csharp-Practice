@@ -50,32 +50,21 @@ namespace WpfApp1
 
             openFileDialog1.InitialDirectory = "c:\\";
             openFileDialog1.Filter = "Database files (*.csv)|*.csv";
-            openFileDialog1.FilterIndex = 0;
-            openFileDialog1.RestoreDirectory = true;
+            ///openFileDialog1.FilterIndex = 0;
+            ///openFileDialog1.RestoreDirectory = true;
 
             if (openFileDialog1.ShowDialog() == true)
             {
-                string selectedFileName = openFileDialog1.FileName;
-                MessageBox.Show(selectedFileName);
-                System.Diagnostics.Debug.WriteLine(selectedFileName);
-                Console.WriteLine(selectedFileName);
-                Console.WriteLine("Comentarioooooooooooooooooooooooo");
-                System.Diagnostics.Debug.WriteLine("Comentarioooooooooo");
-
-                using (var reader = new StreamReader(selectedFileName))
+                string[] lines = File.ReadAllLines(openFileDialog1.FileName);
+                List<Elements> listE = new List<Elements>();
+                foreach (string line in lines) 
                 {
-                    List<string> listA = new List<string>();
-                    List<string> listB = new List<string>();
-                    while (!reader.EndOfStream)
-                    {
-                        var line = reader.ReadLine();
-                        var values = line.Split(';');
-
-                        listA.Add(values[0]);
-                        listB.Add(values[1]);
-                    }
+                    string[] vls = line.Split(',');
+                    Elements element = new Elements() { CdDepartamento = vls[0] , CdMunicipio = vls[1], Departamento = vls[2], Municipio = vls[3], Tipo = vls[4]};
+                    listE.Add(element);
                 }
-                //...
+                listE.RemoveAt(0);
+                Dg.ItemsSource = listE;
             }
             else
             {
