@@ -3,9 +3,12 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:DVC="clr-namespace:System.Windows.Controls.DataVisualization.Charting;assembly=DotNetProjects.DataVisualization.Toolkit"
         xmlns:local="clr-namespace:WpfApp1"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+
+        Title="Aplicación
+        " Height="700" Width="800">
 
     <Grid Margin="15">
 
@@ -16,8 +19,15 @@
             <RowDefinition Height="*" />
 
         </Grid.RowDefinitions>
-        
-        <Button Width="140" Content="Seleccionar Archivo" HorizontalAlignment="Center" Margin="0,20,0,20" VerticalAlignment="Top" Click="OnClick" ClickMode="Press" BorderThickness="2"/>
+
+        <Grid Grid.Row="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Button Width="140" Content="Seleccionar Archivo" HorizontalAlignment="Center" Margin="0,20,0,20" VerticalAlignment="Top" Click="OnClick" ClickMode="Press" BorderThickness="2" />
+            <ComboBox  HorizontalAlignment="Center" Margin="0" VerticalAlignment="Center" Width="120" x:Name="CbLetters" SelectionChanged="OnSelectionChanged" Grid.Column="1" BorderThickness="2"/>
+        </Grid>
         <DataGrid AutoGenerateColumns="False" IsReadOnly="True" HorizontalAlignment="Center" Width="700" x:Name="Dg" Grid.Row="1">
 
             <DataGrid.Columns>
@@ -29,6 +39,12 @@
             </DataGrid.Columns>
         </DataGrid>
 
+        <DVC:Chart Grid.Row="2" Background="White" Title="Estadísticas" LegendTitle="Tipo de departamentos" x:Name="Graph" Margin="0,20,0,0">
+
+            <DVC:BarSeries Title="Cantidad" IndependentValueBinding="{Binding tipo}" DependentValueBinding="{Binding cantidad}" x:Name="BarGraph"/>
+
+        </DVC:Chart>
+        
 
     </Grid>
 </Window>

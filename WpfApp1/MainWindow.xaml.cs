@@ -42,6 +42,7 @@ namespace WpfApp1
     }
     public partial class MainWindow : Window
     {
+        List<Elements> list = new List<Elements>();
         public MainWindow()
         {
             InitializeComponent();
@@ -76,6 +77,7 @@ namespace WpfApp1
             {
                 string[] lines = File.ReadAllLines(openFileDialog1.FileName);
                 List<Elements> listE = new List<Elements>();
+                this.list = listE;
                 foreach (string line in lines) 
                 {
                     string[] vls = line.Split(',');
@@ -83,11 +85,34 @@ namespace WpfApp1
                     listE.Add(element);
                 }
                 listE.RemoveAt(0);
+                List<DataGraph> data = new List<DataGraph>();
+                data.Add(new DataGraph { tipo = "Municipio", cantidad = 0 });
+                data.Add(new DataGraph { tipo = "Isla", cantidad = 0 });
+                data.Add(new DataGraph { tipo = "Área no municipalizada", cantidad = 0 });
+                foreach (Elements element in listE)
+                {
+                    switch (element.Tipo)
+                    {
+                        case "Municipio":
+                            data.ElementAt(0).cantidad += 1; break;
+                        case "Isla":
+                            data.ElementAt(1).cantidad += 1; break;
+                        default:
+                            data.ElementAt(2).cantidad += 1; break;
+                    }
+                }
                 Dg.ItemsSource = listE;
+                BarGraph.ItemsSource = data;
             }
             else
             {
                 MessageBox.Show("Ingrese un archivo valido");
+            }
+
+            List<string> letters = new List<string>();
+            for(int i = 1; i < 27; i++)
+            {
+                CbLetters.Items.Add(Char.ConvertFromUtf32(64+i).ToString());
             }
 
             DataTable table = new DataTable();
@@ -98,7 +123,6 @@ namespace WpfApp1
             table.Columns.Add("nameMun", typeof(string));
             table.Columns.Add("type", typeof(string));
 
-            
 
 
 
@@ -106,6 +130,24 @@ namespace WpfApp1
             //System.Diagnostics.Debug.WriteLine("2Comentarioooooooooo");
         }
 
-        
+        void OnSelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            List<Elements> filteredElemnts = new List<Elements>();
+            if(list != null)
+            {
+                foreach(Elements el in list)
+                {
+                    if (el.Municipio.ElementAt(0).ToString().Equals(CbLetters.SelectedItem.ToString()))
+                    {
+                        //MessageBox.Show(list.ElementAt(0).Municipio);
+                        filteredElemnts.Add(el);
+                    }
+                }
+                Dg.ItemsSource = filteredElemnts;
+                
+            }
+            //MessageBox.Show(list.ElementAt(0).Municipio.ElementAt(0).ToString());
+        }
+
     }
 }
