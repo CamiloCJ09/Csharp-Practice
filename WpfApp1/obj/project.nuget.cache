@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "nDY36M85aMOyi4usqDj0y/M4dJs1Pmg9KhUhHpI4oXiy8VnxsGokXamLNJLBcLGDJuLTvY9cAJOIbJQkajER3w==",
+  "dgSpecHash": "0+37MDYdrIJjxXi2J7I1tXa8AAXLAxYVUclbDsikHtKa69Lv02s3ZjRxmdAisDxSvamTncYPFH1bVnysshn6Mw==",
   "success": true,
   "projectFilePath": "D:\\Camilo\\Icesi\\Sem5\\PI1\\Workspace\\FTPI1\\WpfApp1\\WpfApp1\\WpfApp1.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\camil\\.nuget\\packages\\dotnetprojects.wpftoolkit.datavisualization\\6.1.94\\dotnetprojects.wpftoolkit.datavisualization.6.1.94.nupkg.sha512"
+  ],
   "logs": []
 }
