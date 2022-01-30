@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "zn52ZmOPm9xJDqO8Sn+Fk/GC05/eQaqeqZgFiVBx+yPNSZbVWr9GHjjNTlLAevgo13iYrpZY1C5JUzKAqkY6tQ==",
+  "dgSpecHash": "/fcq10ybEY4nwX0XGC+es6NZQZglU778zgFuy3KLt3AOYDMPbJ8UkFgeFDrk0rvsM4XyC0YPdoldoCUj0W/CFQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\JuanJo\\Source\\Repos\\Csharp-Practice\\WpfApp1\\WpfApp1.csproj",
+  "projectFilePath": "C:\\Users\\JuanJo\\source\\repos\\Csharp-Practice\\WpfApp1\\WpfApp1.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\JuanJo\\.nuget\\packages\\dotnetprojects.wpftoolkit.datavisualization\\6.1.94\\dotnetprojects.wpftoolkit.datavisualization.6.1.94.nupkg.sha512"
   ],
