@@ -64,7 +64,24 @@ namespace WpfApp1
                     listE.Add(element);
                 }
                 listE.RemoveAt(0);
+                List<DataGraph> data = new List<DataGraph>();
+                data.Add(new DataGraph { tipo = "Municipio", cantidad = 0 });
+                data.Add(new DataGraph { tipo = "Isla", cantidad = 0 });
+                data.Add(new DataGraph { tipo = "Área no municipalizada", cantidad = 0 });
+                foreach (Elements element in listE)
+                {
+                    switch (element.Tipo)
+                    {
+                        case "Municipio":
+                            data.ElementAt(0).cantidad += 1; break;
+                        case "Isla":
+                            data.ElementAt(1).cantidad += 1; break;
+                        default:
+                            data.ElementAt(2).cantidad += 1; break;
+                    }
+                }
                 Dg.ItemsSource = listE;
+                BarGraph.ItemsSource = data;
             }
             else
             {
