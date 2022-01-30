@@ -22,24 +22,6 @@ namespace WpfApp1
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
-    public class ListElements
-    {
-        public string codeDep { get; set; }
-        public string codeMun { get; set; }
-        public string nameDep { get; set; }
-        public string nameMun { get; set; }
-        public string type { get; set; }
-
-        public ListElements(string codeDep, string codeMun, string nameDep, string nameMun, string type)
-        {
-            this.codeDep = codeDep;
-            this.codeMun = codeMun;
-            this.nameDep = nameDep;
-            this.nameMun = nameMun;
-            this.type = type;
-        }
-
-    }
     public partial class MainWindow : Window
     {
         List<Elements> list = new List<Elements>();

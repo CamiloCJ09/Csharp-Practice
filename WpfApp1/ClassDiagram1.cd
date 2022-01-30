@@ -11,7 +11,7 @@
     <Position X="8" Y="0.5" Width="2.25" />
     <TypeIdentifier>
       <HashCode>AQAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Class1.cs</FileName>
+      <FileName>DataGraph.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="WpfApp1.Elements">
@@ -24,7 +24,7 @@
   <Class Name="WpfApp1.MainWindow" BaseTypeListCollapsed="true">
     <Position X="3.75" Y="1.75" Width="3.75" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAgAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAACAAA=</HashCode>
       <FileName>MainWindow.xaml.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" Collapsed="true" />
