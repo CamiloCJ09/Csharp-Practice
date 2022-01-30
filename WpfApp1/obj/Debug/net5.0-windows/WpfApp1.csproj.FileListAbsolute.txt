@@ -44,3 +44,5 @@ C:\Users\JuanJo\Source\Repos\Csharp-Practice\WpfApp1\obj\Debug\net5.0-windows\Wp
 C:\Users\JuanJo\Source\Repos\Csharp-Practice\WpfApp1\obj\Debug\net5.0-windows\WpfApp1.genruntimeconfig.cache
 C:\Users\JuanJo\Source\Repos\Csharp-Practice\WpfApp1\bin\Debug\net5.0-windows\DotNetProjects.DataVisualization.Toolkit.dll
 C:\Users\JuanJo\Source\Repos\Csharp-Practice\WpfApp1\obj\Debug\net5.0-windows\WpfApp1.csproj.CopyComplete
+D:\Camilo\Icesi\Sem5\PI1\Workspace\FTPI1\WpfApp1\WpfApp1\bin\Debug\net5.0-windows\DotNetProjects.DataVisualization.Toolkit.dll
+D:\Camilo\Icesi\Sem5\PI1\Workspace\FTPI1\WpfApp1\WpfApp1\obj\Debug\net5.0-windows\WpfApp1.csproj.CopyComplete
